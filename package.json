@@ -1,0 +1,31 @@
+{
+  "name": "i-storage",
+  "version": "0.0.1",
+  "description": "给localStorage整合过期时间，更便捷的用于前端存储",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chechengyi/i-storage.git"
+  },
+  "keywords": [
+    "localStorage"
+  ],
+  "author": "Chechengyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chechengyi/i-storage/issues"
+  },
+  "homepage": "https://github.com/Chechengyi/i-storage#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  }
+}
