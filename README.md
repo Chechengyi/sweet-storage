@@ -1,7 +1,10 @@
 # i-storage
-给localStotage整合了过期时间的功能
+给localStorage整合了过期时间的功能
 
 ## 简介
+localStorage是浏览器提供给我们的原生api， 目前localStorage只能实现永久存储。 
+本工具给localStorage整合了设置过期时间的功能， 并让用户可以在存储信息过期的时候去“订阅”到此信息。
+此外，本工具也整合了 sessionStorage的存储操作
 
 
 ## 如何使用
