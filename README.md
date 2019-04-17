@@ -19,7 +19,11 @@
   git clone https://github.com/Chechengyi/sweet-storage.git
   
   ```
-  <script src='./storage/release/storage.js'></script>
+    <script src='./storage/release/storage.js'></script>
+    storage.save('name', 'storage', 3000)
+    storage.on('name', (key)=>{
+      console.log(key + '过期了被删除了')
+    })
   ```
   
 
