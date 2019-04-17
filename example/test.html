@@ -19,8 +19,10 @@
         console.log(key+'订阅函数执行了')
       }
 
-      storage.save('name', null, 3000, a)
+      storage.save('name', null, 3000)
       storage.save('age', 23, 4000)
+
+      storage.on('name', a)
 
       storage.on('age', function(key){
         console.log(key+'订阅函数执行了')
