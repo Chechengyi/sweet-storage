@@ -27,3 +27,10 @@
       console.log(key + '过期了被删除了')
     })
   ```
+
+
+## API
+  - storage.save(key, value, time)  // 存储到localStorage中
+    - key: 存储的键
+    - value: 存储的值
+    - time: 存储的时间， 毫秒数  time不允许为0  

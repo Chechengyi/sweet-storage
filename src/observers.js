@@ -36,7 +36,6 @@ observer.unsubscribe = function(key, fn){
   this.list[key] = fns.filter( item=> {
     return item !== fn
   })
-  console.log(this.list[key])
 }
 
 
