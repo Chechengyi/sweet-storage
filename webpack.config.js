@@ -2,7 +2,10 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: __dirname,
-    filename: './release/bundle.js',
+    filename: './release/storage.js',
+    library: 'storage',
+    libraryTarget: 'umd',
+    libraryExport: "default"
   },
   module: {
     rules: [

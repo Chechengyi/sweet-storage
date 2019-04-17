@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>i-storage</title>
 </head>
+
 <body>
-  <script src='../release/bundle.js'></script>
+  <button id='btn1'>按钮1</button>
+  <button id='btn2'>清除全部</button>
+  <script src='../release/storage.js'></script>
+  <script>
+    window.onload = function () {
+      storage.save('name', 'ccy', 3000)
+      storage.save('age', 23, 4000)
+
+      var btn1 = document.getElementById('btn1')
+      btn1.onclick = function(){
+        storage.save('name', 'ccy', 8000)
+      }
+
+      var btn2 = document.getElementById('btn2')
+      btn2.onclick = function(){
+        storage.clear()
+      }
+    }
+  </script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 {
-  "name": "i-storage",
-  "version": "0.0.1",
+  "name": "sweet-storage",
+  "version": "0.0.2",
   "description": "给localStorage整合过期时间，更便捷的用于前端存储",
   "main": "src/index.js",
   "scripts": {
@@ -27,5 +27,8 @@
     "babel-preset-env": "^1.7.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "user": "0.0.0"
   }
 }
