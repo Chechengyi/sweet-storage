@@ -19,9 +19,11 @@
   ```
 
 ###  直接引入
-  git clone https://github.com/Chechengyi/sweet-storage.git
-  
   ```
+  git clone https://github.com/Chechengyi/sweet-storage.git
+  ```
+  
+  ```javascript
     <script src='./storage/release/storage.js'></script>
     storage.save('name', 'storage', 3000)
     storage.on('name', (key)=>{
