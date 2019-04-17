@@ -16,10 +16,7 @@
   ```
 
 ###  直接引入
-  ```bash
   git clone https://github.com/Chechengyi/sweet-storage.git
-  ```bash
-  
   
   ```
   <script src='./storage/release/storage.js'></script>
