@@ -7,8 +7,11 @@
 ## 如何使用
 
 ###  npm 下载
+  ```
   npm install sweet-storage
   ```
+  
+  ```javascript
     import storage from 'sweet-storage'
     storage.save('name', 'storage', 3000, (key)=> {
       console.log(key + '过期了被删除了')
