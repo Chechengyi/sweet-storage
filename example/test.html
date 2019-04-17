@@ -14,8 +14,21 @@
   <script src='../release/storage.js'></script>
   <script>
     window.onload = function () {
-      storage.save('name', 'ccy', 3000)
+      console.log(storage.session)
+      function a(key){
+        console.log(key+'订阅函数执行了')
+      }
+
+      storage.save('name', null, 3000, a)
       storage.save('age', 23, 4000)
+
+      storage.on('age', function(key){
+        console.log(key+'订阅函数执行了')
+      })
+
+      setTimeout( ()=> {
+        storage.off('name', a)
+      }, 2000)
 
       var btn1 = document.getElementById('btn1')
       btn1.onclick = function(){

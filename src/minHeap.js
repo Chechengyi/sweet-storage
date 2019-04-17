@@ -1,4 +1,5 @@
 import { remove } from './storage'
+import observers from './observers'
 
 let minHeap = []       // 用于实现优先队列的最小堆
 let minHeapCount = 0   // 最小堆中的元素个数
@@ -36,6 +37,7 @@ function createTimer() {
   let time = minHeap[0].time
   timer = setTimeout(() => {
     let timedueItem = shift()
+    observers.trriger(timedueItem.key, timedueItem.key)
     remove(timedueItem.key)
   }, time)
 }
@@ -69,7 +71,6 @@ function shift() {
  * @param {obj} Object {key, time} 
  */
 export function insert(obj) {
-  console.log('插入操作')
   minHeap[minHeapCount] = obj
   shiftUp(minHeapCount)
   minHeapCount++

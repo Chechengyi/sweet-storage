@@ -4,7 +4,7 @@
   "description": "给localStorage整合过期时间，更便捷的用于前端存储",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register",
     "release": "webpack --mode production"
   },
   "repository": {

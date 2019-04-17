@@ -1,6 +1,8 @@
 import { getLocalInfo, recordName } from './storage_info'
 import { createMinHeapByLocalInfo } from './minHeap'
 import { save, remove, clear } from './storage'
+import observer from './observers'
+import session from './session'
 
 /**
  * 初始化storage  检查localStorage中存储的localInfo如果有时间过期的先直接删掉
@@ -13,9 +15,9 @@ function init() {
   }
   let localInfo = getLocalInfo()
   const nowTime = new Date().getTime()
-  
-  Object.keys(localInfo).forEach( item=> {
-    if ( localInfo[item] <= nowTime ){
+
+  Object.keys(localInfo).forEach(item => {
+    if (localInfo[item] <= nowTime) {
       localStorage.removeItem(item)
       delete localInfo[item]
     }
@@ -30,6 +32,10 @@ export default {
   remove,
   clear,
   session: {
-
+    save: session.save,
+    remove: session.remove,
+    clear: session.clear
   },
+  on: observer.subscribe.bind(observer),
+  off: observer.unsubscribe.bind(observer)
 }
