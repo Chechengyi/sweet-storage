@@ -6,27 +6,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>i-storage</title>
+  <style>
+    body {
+      background-color: #e1e1e1
+    }
+
+    .warp {
+      width: 700px;
+      overflow: hidden;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .btn {
+      margin-right: 20px;
+      padding: 5px 15px;
+      background-color: #108ee9;
+      color: #fff;
+      border: 0px;
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-  <button id='btn1'>存10s</button>
-  <button id='btn2'>清除全部</button>
+  <div class='warp'>
+    <p>配合代码观看更为一目了然</p>
+  </div>
+  <div class='warp'>
+    <div>
+      <h4>demo1</h4>
+      <p>点击“按钮一”存储一个key为“name”，值为“chechengyi”， 存储时间为10s。 点完之后等待10s，在这10s的过程中
+        可以试着刷新页面 订阅的函数会在按下按钮后的10s触发
+      </p>
+    </div>
+    <button id='btn1' class='btn'>按钮一</button>
+  </div>
+  <div class='warp'>
+    <div>
+      <h4>demo2</h4>
+      <p>
+        点击“按钮2”， 依次向localStorage存入过期时间为， 3s， 4s， 5s的信息。 观看控制台可以看到相应时间内
+        存储的信息依次过期。
+      </p>
+    </div>
+    <button id='btn2' class='btn'>按钮二</button>
+  </div>
+  <div class='warp'>
+      <div>
+        <h4>demo3</h4>
+        <p>
+          点击“按钮3”， 向localStorage存入一个过期时间为 10s 的信息， key为 “test3”， 值为“sweet-storage”。
+        </p>
+        <p>点击“按钮4”更新“test3”的存储信息， 将过期时间更新为 点击按钮4后的2s过期。</p>
+      </div>
+      <button id='btn3' class='btn'>按钮三</button>
+      <button id='btn4' class='btn'>按钮四</button>
+    </div>
   <script src='../release/storage.js'></script>
   <script>
     window.onload = function () {
 
       var btn1 = document.getElementById('btn1')
+      var btn2 = document.getElementById('btn2')
+      var btn3 = document.getElementById('btn3')
+      var btn4 = document.getElementById('btn4')
 
-      function a(){
-        alert('订阅函数执行了')
+      function handleName(key) {
+        alert(key + '订阅函数执行了')
       }
+      storage.on('name', handleName)
 
-      btn1.onclick = function(){
+      btn1.onclick = function () {
 
         storage.save('name', 'ccy', 10000)
 
       }
-      storage.on('name', a)
+
+      btn2.onclick = function () {
+        storage.save('3s', '3s', 3000)
+        storage.save('4s', '4s', 4000)
+        storage.save('5s', '5s', 5000)
+      }
+
+      function handleTest3(key){
+        alert(key + '订阅函数执行了')
+      }
+
+      storage.on('test3', handleTest3)
+
+      btn3.onclick = function(){
+        storage.save('test3', 'sweet-storage', 10000)
+      }
+      btn4.onclick = function(){
+        storage.save('test3', 'sweet-storage', 2000)
+      }
     }
   </script>
 </body>
