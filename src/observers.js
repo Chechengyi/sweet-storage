@@ -12,7 +12,7 @@ observer.subscribe = function(key, fn) {
 }
 
 
-observer.trriger = function(key){
+observer.trigger = function(key){
   let fns = this.list[key]
   if ( !fns ) return 
   let args = [].slice.call(arguments, 1)

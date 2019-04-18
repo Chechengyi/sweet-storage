@@ -37,7 +37,7 @@ function createTimer() {
   let time = minHeap[0].time
   timer = setTimeout(() => {
     let timedueItem = shift()
-    observers.trriger(timedueItem.key, timedueItem.key)
+    observers.trigger(timedueItem.key, timedueItem.key)
     remove(timedueItem.key)
   }, time)
 }
