@@ -48,7 +48,7 @@ storage.save(key, value, time)
 
 * key: 存储的键
 * value: 存储的值
-* time: 过期时间(ms), 不传代表永久存储，  time不允许设为0
+* time: 过期时间(ms), 不传代表永久存储,  time不允许设为0
 
 #### remove
 
