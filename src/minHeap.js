@@ -87,6 +87,7 @@ function shiftUp(index) {
     let parent = Math.floor((index - 1) / 2)
     if (minHeap[parent].time > minHeap[index].time) {
       swap(parent, index, minHeap)
+      index = parent
     } else {
       break
     }
