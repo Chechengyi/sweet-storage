@@ -1,8 +1,8 @@
 {
   "name": "sweet-storage",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "给localStorage整合过期时间，更便捷的用于前端存储",
-  "main": "src/index.js",
+  "main": "release/storage.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
     "release": "webpack --mode production"
