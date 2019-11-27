@@ -1,3 +1,6 @@
+function get(key) {
+  return sessionStorage.getItem(key)
+}
 
 function save(key, value){
   sessionStorage.setItem(key, value)
@@ -12,6 +15,7 @@ function clear(){
 }
 
 export default {
+  get,
   save,
   remove,
   clear

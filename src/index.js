@@ -1,6 +1,6 @@
 import { getLocalInfo, recordName } from './storage_info'
 import { createMinHeapByLocalInfo } from './minHeap'
-import { save, remove, clear } from './storage'
+import { save, remove, clear, get } from './storage'
 import observer from './observers'
 import session from './session'
 
@@ -28,10 +28,12 @@ function init() {
 init()
 
 export default {
+  get,
   save,
   remove,
   clear,
   session: {
+    get: session.get,
     save: session.save,
     remove: session.remove,
     clear: session.clear

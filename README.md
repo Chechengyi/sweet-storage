@@ -38,6 +38,16 @@ storage.on('name', (key)=>{
 
 ### localStorage
 
+### get
+
+根据key获取localStorage中的信息
+
+```js
+storage.get(key)
+```
+
+* key: 保存的时候设置的key
+
 #### save
 
 存储到localStorage中
@@ -90,6 +100,16 @@ storage.off(key)
 * key: 被订阅的键
 
 ### sessionStorage
+
+### get
+
+根据key获取sessionStorage中的信息
+
+```js
+storage.session.get(key)
+```
+
+* key: 保存的时候设置的key
 
 #### save
 
