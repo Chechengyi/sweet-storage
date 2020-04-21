@@ -94,10 +94,15 @@ storage.on(key, fn)
 取消订阅某一个键的到期信息
 
 ```js
-storage.off(key)
+storage.off(key, fn)
+```
+
+```js
+storage.off(key, true)  // 传入true取消所有订阅此键的函数
 ```
 
 * key: 被订阅的键
+* fn:  取消的函数
 
 ### sessionStorage
 

@@ -37,8 +37,8 @@ function createTimer() {
   let time = minHeap[0].time
   timer = setTimeout(() => {
     let timedueItem = shift()
-    observers.trigger(timedueItem.key, timedueItem.key)
     remove(timedueItem.key)
+    observers.trigger(timedueItem.key, timedueItem.key)
   }, time)
 }
 
@@ -130,7 +130,7 @@ function swap(i, j, arr) {
 
 
 // 清除优先队列和定时器
-export function clearHeap(){
+export function clearHeap() {
   clearTimeout(timer)
   minHeap = []
   minHeapCount = 0
