@@ -1,6 +1,6 @@
 {
   "name": "sweet-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "给localStorage整合过期时间，更便捷的用于前端存储",
   "main": "release/storage.js",
   "types": "release/storage.d.ts",

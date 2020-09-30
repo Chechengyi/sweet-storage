@@ -27,7 +27,7 @@ function init() {
 }
 init()
 
-export default {
+const Storage = {
   get,
   save,
   remove,
@@ -41,3 +41,5 @@ export default {
   on: observer.subscribe.bind(observer),
   off: observer.unsubscribe.bind(observer)
 }
+
+export default Storage

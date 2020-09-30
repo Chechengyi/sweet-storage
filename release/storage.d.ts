@@ -1,20 +1,29 @@
 
-interface Session {
-  get: (key: string) => string;
-  save: (key: string, value: string) => void;
-  remove: (key: string, value: string) => void;
-  clear: () => void;
-}
+
+export default Storage;
+
+export as namespace Storage;
+
 
 declare namespace Storage {
-  function get(key: string): string;
-  function save(key: string, value: string, time?: number);
-  function remove(key: string);
+
+  type Key = string;
+  type Value = string | number;
+  type Time = number;
+
+  interface Session {
+    get: (key: Key) => string;
+    save: (key: Key, value: Value) => void;
+    remove: (key: Key, value: Value) => void;
+    clear: () => void;
+  }
+
+  function get(key: Key): string;
+  function save(key: Key, value: Value, time?: Time);
+  function remove(key: Key);
   function clear(): void;
-  const session: Session
-  function on(key: string, fn: Function): void
-  function off(key: string, fn?: Function): void;
+  const session: Session;
+  function on(key: Key, fn: Function): void
+  function off(key: Key, fn?: Function): void;
 }
 
-
-export = Storage;
