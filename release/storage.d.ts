@@ -16,6 +16,5 @@ declare namespace Storage {
   function off(key: string, fn?: Function): void;
 }
 
-export as namespace Storage;
 
 export = Storage;
