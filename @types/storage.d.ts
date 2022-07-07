@@ -19,8 +19,8 @@ declare namespace Storage {
   }
 
   function get(key: Key): string;
-  function save(key: Key, value: Value, time?: Time);
-  function remove(key: Key);
+  function save(key: Key, value: Value, time?: Time): void;
+  function remove(key: Key): void;
   function clear(): void;
   const session: Session;
   function on(key: Key, fn: Function): void
