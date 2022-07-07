@@ -6,7 +6,8 @@
   "types": "release/storage.d.ts",
   "scripts": {
     "test": "jest",
-    "release": "webpack --mode production"
+    "release": "webpack --mode production & npm run types",
+    "types": "cp ./@types/storage.d.ts ./release/storage.d.ts"
   },
   "repository": {
     "type": "git",

@@ -78,6 +78,9 @@
       function handleName(key) {
         alert(key + '订阅函数执行了')
       }
+      function consoleName(key){
+        console.log(key + '订阅函数执行了')
+      }
       storage.on('name', handleName)
 
       btn1.onclick = function () {
@@ -90,6 +93,10 @@
         storage.save('3s', '3s', 3000)
         storage.save('4s', '4s', 4000)
         storage.save('5s', '5s', 5000)
+        storage.on('3s', consoleName)
+        storage.on('4s', consoleName)
+        storage.on('5s', consoleName)
+
       }
 
       function handleTest3(key){

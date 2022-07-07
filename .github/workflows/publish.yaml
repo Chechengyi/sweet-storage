@@ -1,0 +1,43 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Publish
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  test:
+    name: Unit testing
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14.17.0'
+
+    - run: npm install
+    - run: npm run test
+  publish:
+    needs: test
+    name: publish  
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Publish
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14.17.0'
+
+    - run: npm install
+    - run: npm run release
+    - name: publish to npm
+      run: npm publish || true
+      env: 
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
